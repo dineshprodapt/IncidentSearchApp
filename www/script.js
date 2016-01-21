@@ -1,7 +1,7 @@
 var module = ons.bootstrap('incident-app', ['onsen']);
 module.controller('IncidentSearchController', function($scope,$http) {
 
-	$scope.wsUrl='http://71.29.162.173/itsm/index.php?callback=JSON_CALLBACK';
+	$scope.wsUrl='http://vml707.windstream.com/itsm/index.php?callback=JSON_CALLBACK';
 	ons.ready(function() {
 	});
 	
