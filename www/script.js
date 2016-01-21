@@ -22,10 +22,12 @@ module.controller('IncidentSearchController', function($scope,$http) {
 		
 		if(vIncidentid.length == 15 && vIncidentid.indexOf("INC") > -1 ){
 			var url=$scope.wsUrl;
+			alert(url);
 			$http.jsonp(url,
 			{ params :{ 'inc_id' : vIncidentid } }
 			)
 			.success(function(data, status, headers, config) {
+			alert("success:::::data: "+data+" status: "+status+" headers: "+headers+" config: "+config );
 			$scope.showIncidentID = vIncidentid;
 			$scope.showSummary = data.Summary;
 			$scope.showAssignedGroup = data.Assigned_Group;
@@ -45,6 +47,7 @@ module.controller('IncidentSearchController', function($scope,$http) {
 			})
 			
 			.error(function(data, status, headers, config) {
+			alert("error::::data: "+data+" status: "+status+" headers: "+headers+" config: "+config );
 			clearSearch($scope);
 			ons.notification.alert({
 					message: "Invalid IncidentID",
